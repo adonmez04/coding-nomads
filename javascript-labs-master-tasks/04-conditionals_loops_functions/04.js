@@ -75,14 +75,14 @@ function KtoF(tempInKelvin) {
 // below should work without error.
 // *****************************************************************************
 
-function pythagoras (side1, side2){
+function pythagoras(side1, side2) {
   // hypotenuse ** 2 = (side1 ** 2) + (side2 ** 2)
   // hypotenuse = ((side1 ** 2) + (side2 ** 2)) ** (1/2)
   let hypotenuse;
-  hypotenuse = ((side1 ** 2) + (side2 ** 2)) ** (1/2);
+  hypotenuse = (side1 ** 2 + side2 ** 2) ** (1 / 2);
   return hypotenuse.toFixed(2);
-
 }
+
 
 // console.log(pythagoras(10, 20));
 // console.log(pythagoras(30, 100));
@@ -102,13 +102,13 @@ function pythagoras (side1, side2){
 // The inches to centimeters formula is (C = I * 2.54)
 // The centimeters to inches formula is (I = C / 2.54)
 
-function inchToCm (inInches) {
+function inchToCm(inInches) {
   let centimeters;
   centimeters = inInches * 2.54;
   return centimeters.toFixed(2);
 }
 
-function CmToInch (inCentimeters) {
+function CmToInch(inCentimeters) {
   let inches;
   inches = inCentimeters / 2.54;
   return inches.toFixed(2);
@@ -122,13 +122,13 @@ function CmToInch (inCentimeters) {
 // The miles to kilometers formula is (K = M * 1.609)
 // The kilometers to miles formula is (M = K / 1.609)
 
-function MToKm (inMiles) {
+function MToKm(inMiles) {
   let kilometers;
   kilometers = inMiles * 1.609;
   return kilometers.toFixed(2);
 }
 
-function KmToM (inKilometers){
+function KmToM(inKilometers) {
   let miles;
   miles = inKilometers / 1.609;
   return miles.toFixed(2);
