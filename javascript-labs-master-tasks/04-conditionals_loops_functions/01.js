@@ -46,7 +46,7 @@
 //
 // console.log(randomNumber)
 
-for (let count = 1; count < 41; count++) {
+for (let count = 1; count < 100; count++) {
     let age = Math.floor(Math.random() * 100 + 1);
     console.log(count);
     console.log("Your age is " + age);
