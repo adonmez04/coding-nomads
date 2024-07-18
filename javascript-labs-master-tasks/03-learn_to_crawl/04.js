@@ -1,4 +1,4 @@
-/**
+/*
  * Create three variables with numbers assigned to them.
  * Do not use zero.
  * Make the numbers at least 4 digits long, e.g. 3874, 2398.
@@ -25,7 +25,7 @@ let firstNumber = 1000;
 let secondNumber = 2000;
 let thirdNumber = 3000;
 let luckyNumber = 7;
-let result = 0
+let result = 0;
 
 result = firstNumber + secondNumber + thirdNumber + luckyNumber;
 console.log(`1. The sum of the numbers = ${result}`);

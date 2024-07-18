@@ -5,3 +5,4 @@
 let result;
 result = 78347823 * 843972;
 console.log(result)
+
