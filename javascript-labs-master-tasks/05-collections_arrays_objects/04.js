@@ -1196,8 +1196,8 @@ for(let i = 0; i < data.length; i++) {
   }
 }
 
-console.log(`The average temperature is Vancouver ${vancouverAverage} Celsius and ${cToF(vancouverAverage)} Fahrenheit.`);
-console.log(`The average temperature is Jerusalem ${fToC(jerusalemAverage)} Celsius and ${jerusalemAverage} Fahrenheit`);
+// console.log(`The average temperature is Vancouver ${vancouverAverage} Celsius and ${cToF(vancouverAverage)} Fahrenheit.`);
+// console.log(`The average temperature is Jerusalem ${fToC(jerusalemAverage)} Celsius and ${jerusalemAverage} Fahrenheit`);
 
 // Task 5 *************************************************************************
 // 5. Write a function that will return a chosen city's average temperature in
@@ -1206,4 +1206,30 @@ console.log(`The average temperature is Jerusalem ${fToC(jerusalemAverage)} Cels
 
 // let avgTempInCity = getAvgTemp("Vancouver", "C");
 // console.log(avgTempInCity);
+
+function getAvgTemp(city, scale) {
+  let sum = 0;
+  let iteration = 0;
+  let average = 0;
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].City === city) {
+      if (data[i].Scale[0] === scale ){
+          let counter = 0;
+          counter++;
+          iteration += counter;
+          sum += data[i].Temperature;
+          average = +(sum / iteration).toFixed(2);
+      }
+    }
+  }
+  return average;
+}
+
+let avgTempInCity = getAvgTemp("Jerusalem", "F");
+console.log(`The average temperature of Jerusalem is ${avgTempInCity} Fahrenheit or ${fToC(avgTempInCity)} Celsius.`);
+
+
+
+
 
