@@ -139,7 +139,7 @@
 //     resultOdd += count;
 //   }
 // }
-
+//
 // console.log(evenNumbers);
 // console.log(oddNumbers);
 
