@@ -1229,6 +1229,10 @@ function getAvgTemp(city, scale) {
 let avgTempInCity = getAvgTemp("Jerusalem", "F");
 console.log(`The average temperature of Jerusalem is ${avgTempInCity} Fahrenheit or ${fToC(avgTempInCity)} Celsius.`);
 
+let avgTempInCity2 = getAvgTemp("Vancouver", "C");
+console.log(`The average temperature of Vancouver is ${fToC(avgTempInCity2)} Fahrenheit or ${avgTempInCity2} Celsius.`);
+
+
 
 
 
