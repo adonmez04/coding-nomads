@@ -1,5 +1,5 @@
 /**
- * Below is a two dimensional list of stores. Each store is represented by a
+ * Below is a two-dimensional list of stores. Each store is represented by a
  * sub-list that contains a unique identifier, its name, its state, its location
  * in the city, and its city.
  *
@@ -12,7 +12,7 @@
  *    these with a presentation string. I.e. "There are __ K-Marts in total."
  *
  * Depending on how you approach this, you may end up using methods not taught
- * in the course so far, this is ok. If you find it on the web and it makes
+ * in the course so far, this is ok. If you find it on the web, and it makes
  * sense to you, use it! After all, there are many ways to do the same thing in
  * programming, especially in JavaScript, none are inherently wrong! Efficiency
  * shouldn't be your first concern, just get it working first! Clarity and
@@ -70,3 +70,96 @@ stores =  [
     [ '4003IN', 'Target', 'IN', 'North', 'Attica' ],
     [ '4003KY', 'Target', 'KY', 'North', 'Ashland' ]
 ]
+
+// Below is a two-dimensional list of stores. Each store is represented by a
+// sub-list that contains
+// a unique identifier,
+// its name,
+// its state,
+// its location
+// in the city
+
+// Task 1 *************************************************************************
+// 1. Log only the city of each store.
+// for (let i = 0; i < stores.length; i++) {
+//     console.log(stores[i][4]);
+// }
+
+// Task 2 *************************************************************************
+// 2. Log only the names of stores in state "CA".
+// for (let i = 0; i < stores.length; i++) {
+//     if (stores[i][2] === 'CA'){
+//         console.log(stores[i][2]);
+//     }
+// }
+
+// Task 3 *************************************************************************
+// 3. Log the number of Target stores in total.
+// let result = 0;
+//
+// for (let i = 0; i < stores.length; i++) {
+//     if (stores[i][1] === 'Target') {
+//         let counter = 0;
+//         counter++;
+//         result += counter;
+//     }
+// }
+// console.log(`The number of Target stores in total is ${result}`);
+
+
+
+// Task 3 *************************************************************************
+// 4. Log the number of each type of store. I.e. 5 Targets, 10 K-Marts - log
+// these with a presentation string. I.e. "There are __ K-Marts in total."
+
+// Appliance Direct
+// Target
+// K-Mart
+// Circuit City
+// Best Buy
+
+let applianceDirectResult = 0;
+let targetResult = 0;
+let kMartResult = 0;
+let circuitResult = 0;
+let bestBuyResult = 0;
+
+
+for (let i = 0; i < stores.length; i++) {
+    let counter = 0;
+    switch (stores[i][1]) {
+        case 'Appliance Direct':
+            counter++;
+            applianceDirectResult += counter;
+            break;
+        case 'Target':
+            counter++;
+            targetResult += counter;
+            break;
+        case 'K-Mart':
+            counter++;
+            kMartResult += counter;
+            break;
+        case 'Circuit City':
+            counter++;
+            circuitResult += counter;
+            break;
+        case 'Best Buy':
+            counter++;
+            bestBuyResult += counter;
+            break;
+        default:
+            console.log(`Error`);
+    }
+}
+
+console.log(`There are ${applianceDirectResult} Appliance Direct in total.`);
+console.log(`There are ${targetResult} Target in total.`);
+console.log(`There are ${kMartResult} K-Mark in total.`);
+console.log(`There are ${circuitResult} Circuit City in total.`);
+console.log(`There are ${bestBuyResult} Best Buy in total.`);
+
+
+
+
+
