@@ -1,6 +1,6 @@
 /**
  * Below is a data set that was generated from a spreadsheet. Tabular data is
- * often transmitted via code as a two dimensional array, with each sub array
+ * often transmitted via code as a two-dimensional array, with each sub array
  * representing one row, and each element in each sub array is one cell. Often
  * the first sub array contains the headers of the columns as it does below.
  *
@@ -24,7 +24,7 @@
  * 4. Create a new array where each row only has the "date", "description", and "amount"
  *    fields of rows that have the category "Eating Out".
  * 5. Create another array where each row only has the "date", "description", and "amount"
- *    fields of rows that have that have the category "Gear and Clothing".
+ *    fields of rows that have the category "Gear and Clothing".
  */
 
 let expenses = [
@@ -938,3 +938,107 @@ let expenses = [
     "Bank of America - Credit Card",
   ],
 ];
+
+
+// *****************************************************************************
+// Remove the first sub array containing headers without manually deleting it.
+// Do you remember the method to remove the first element of an array?
+
+// console.log(expenses);
+expenses.shift();
+// console.log(expenses);
+
+
+// *****************************************************************************
+// 1. Output the total amount of expenses for 2017 and 2018.
+let sum2017 = 0;
+let sum2018 = 0;
+expenses.forEach( (currentIndex) => {
+  if (currentIndex[0].startsWith('2017')) {
+    if (currentIndex[3] < 0) {
+      sum2017 += currentIndex[3];
+      sum2017 = Math.floor(sum2017);
+    }
+  } else if (currentIndex[0].startsWith('2018')) {
+    if (currentIndex[3] < 0) {
+      sum2018 += currentIndex[3];
+      sum2018 = Math.floor(sum2018);
+    }
+  }
+});
+
+console.log(`The expenses of the 2017 is ${sum2017}`);
+console.log(`The expenses of the 2018 is ${sum2018}`);
+
+
+// *****************************************************************************
+// 2. Output the total amount paid for Groceries.
+let sumGro = 0;
+expenses.forEach( (currentItem) =>  {
+  if (currentItem[2].includes("Groceries")) {
+    sumGro += currentItem[3];
+    sumGro = Math.floor(sumGro);
+  }
+});
+
+console.log(`The total amount paid for Groceries is ${sumGro}`);
+
+
+
+// *****************************************************************************
+// 3. Output the total difference in each account after all transactions. So if
+// $100 was deposited into the account and $50 spent, then the total change
+// would be $50.
+let sumAmounts = 0;
+let sumExpenses = 0
+let result = 0;
+
+expenses.forEach( (currentItem) => {
+  if (currentItem[3] > 0) {
+    sumAmounts += currentItem[3];
+    sumAmounts = Math.floor(sumAmounts);
+  } else if (currentItem[3] < 0) {
+    sumExpenses += currentItem[3];
+    sumExpenses = Math.floor(sumExpenses);
+  }
+  result = sumAmounts + sumExpenses;
+} );
+
+console.log(`The total amounts is ${sumAmounts}`);
+console.log(`The total expenses is ${sumExpenses}`);
+console.log(`The difference between them is ${result}`);
+
+// *****************************************************************************
+// 4. Create a new array where each row only has the "date", "description", and "amount"
+// fields of rows that have the category "Eating Out".
+let eatingOut = [];
+let eatingCount = 0;
+
+expenses.forEach( (currentItem) => {
+  if (currentItem[2].includes("Eating Out")) {
+    eatingOut[eatingCount] = [currentItem[0], currentItem[1], currentItem[3]];
+    eatingCount++;
+  }
+});
+
+console.log(eatingOut);
+
+// *****************************************************************************
+// 5. Create another array where each row only has the "date", "description", and "amount"
+// fields of rows that have the category "Gear and Clothing".
+
+let gearAndClothing = [];
+let gearCount = 0;
+
+expenses.forEach( (currentItem) => {
+ if (currentItem[2].includes("Gear and Clothing")) {
+   gearAndClothing[gearCount] = [currentItem[0], currentItem[1], currentItem[3]];
+   gearCount++;
+ }
+});
+
+console.log(gearAndClothing);
+
+
+
+
